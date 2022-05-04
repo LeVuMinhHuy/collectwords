@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "collectwords",
+  "version": "1.0",
+  "description": "Collect new vocabulary you learn and keep track them neatly",
+  "homepage_url": "https://github.com/LeVuMinhHuy",
+  "icons": {
+    "48": "icons/64.png",
+    "96": "icons/64.png"
+  },
+  "permissions:": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icons/64.png",
+    "default_title": "collection",
+    "default_popup": "src/frontend/popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["src/backend/index.js"]
+    }
+  ]
+}
